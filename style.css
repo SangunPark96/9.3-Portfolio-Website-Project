@@ -27,6 +27,32 @@ h1 {
 #style-container {
     background-color: #1D9BF0;
 }
+
+#scroller {
+    display: grid;
+    background-color: #1a7fc2;
+    border-color: white;
+}
+
+#newsSearchDiv {
+    background-color: #1a7fc2;
+}
+
+#newsSearch:hover {
+    background-color: #1a7fc2;
+    transition: background-color 0.5s;
+    text-decoration: underline;
+}
+
+#newsSearch:hover #hidden-text {
+    color: white
+}
+
+#hidden-text {
+    color: #1D9BF0;
+}
+
+
 /* 
 div.form {
     display: grid;
