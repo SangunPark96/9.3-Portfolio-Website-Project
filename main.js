@@ -1,5 +1,3 @@
-
-
 //creating variables to target API and query select HTML elements
 
 const form = document.querySelector("#newsSearch");
@@ -17,7 +15,6 @@ const searchKey = "&sortBy=popularity"
 const apiKey1 = "&apiKey="
 
 const apiKey2 = "0d1cccf0a22042e6aeb60638a22b25b8"
-
 
 const mainSection = document.querySelector("#topStory");
 
