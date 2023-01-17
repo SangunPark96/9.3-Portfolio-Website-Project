@@ -41,7 +41,7 @@ h1 {
 #newsSearch:hover {
     background-color: #1a7fc2;
     transition: background-color 0.5s;
-    text-decoration: underline;
+ 
 }
 
 #newsSearch:hover #hidden-text {

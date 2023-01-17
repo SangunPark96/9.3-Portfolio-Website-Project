@@ -64,6 +64,23 @@ const p8 = document.createElement("p")
 const p9 = document.createElement("p")
 const p10 = document.createElement("p")
 const p11 = document.createElement("p")
+const divA = document.createElement("div")
+const divB = document.createElement("div")
+const divC = document.createElement("div")
+const pA = document.createElement("p");
+const pB = document.createElement("p");
+const pC = document.createElement("p");
+const pD = document.createElement("p");
+const pE = document.createElement("p");
+const pF = document.createElement("p");
+const aA = document.createElement("a")
+const aB = document.createElement("a")
+const aC = document.createElement("a")
+const imgA = document.createElement("img")
+const imgB = document.createElement("img")
+const imgC = document.createElement("img")
+
+
 
 //will focus on search functionality 
 function getTopStories(newsData) {
@@ -78,7 +95,35 @@ function getTopStories(newsData) {
     img1.setAttribute("alt", newsData.articles[0].url)
     a1.setAttribute("href", newsData.articles[0].url)
     a1.append(img1)
-    mainSection.append(h2, p8, p1, a1)
+    divA.append(h2, p8, p1, a1);
+    mainSection.append(divA);
+
+    pA.innerHTML = `<h2>${newsData.articles[1].title}</h2>`;
+    pB.innerHTML =`<strong> By ${newsData.articles[1].source.name} </strong>`;
+    pC.textContent = newsData.articles[1].description
+    imgA.setAttribute("src", newsData.articles[1].urlToImage)
+    imgA.setAttribute("width", "auto")
+    imgA.setAttribute("height", 175)
+    imgA.setAttribute("alt", newsData.articles[1].url)
+    aA.setAttribute("href", newsData.articles[1].url)
+    aA.append(imgA)
+
+    divB.append(pA, pB, pC, aA)
+    mainSection.append(divB);
+
+    pD.innerHTML = `<h2>${newsData.articles[2].title}</h2>`;
+    pE.innerHTML =`<strong> By ${newsData.articles[2].source.name} </strong>`;
+    pF.textContent = newsData.articles[2].description
+    imgB.setAttribute("src", newsData.articles[2].urlToImage)
+    imgB.setAttribute("width", "auto")
+    imgB.setAttribute("height", 175)
+    imgB.setAttribute("alt", newsData.articles[2].url)
+    aB.setAttribute("href", newsData.articles[2].url)
+    aB.append(imgB)
+
+    divC.append(pD, pE, pF, aB)
+    mainSection.append(divC);
+
 }
 
 
@@ -89,7 +134,7 @@ newsSearch.addEventListener("submit", getNewStories);
 //Targets the API in accordance with the users search 
 function getNewStories(event) {
     event.preventDefault();
-    let searchAPI = base_URL + event.target.search.value + date + searchKey + apiKey
+    let searchAPI = base_URL + event.target.search.value + date + searchKey + apiKey;
     getNewAPI(searchAPI);
 }
 //Parse the data to then use with a new function to populate data on webpage
@@ -97,7 +142,6 @@ function getNewAPI(api) {
     fetch(api)
       .then((response) => response.json())
       .then((searchData) => {
-        console.log(searchData)
             getNewArticles(searchData);
       })
       .catch(console.log);
@@ -117,8 +161,8 @@ const img3 = document.createElement("img")
 const img4 = document.createElement("img")
 
 function getNewArticles(searchData){
-    p2.innerHTML = `<h2>${searchData.articles[0].title}</h2>`
-    p9.innerHTML =`<strong> By ${searchData.articles[0].source.name} </strong>`
+    p2.innerHTML = `<h2>${searchData.articles[0].title}</h2>`;
+    p9.innerHTML =`<strong> By ${searchData.articles[0].source.name} </strong>`;
     p3.textContent = searchData.articles[0].description
     img2.setAttribute("src", searchData.articles[0].urlToImage)
     img2.setAttribute("width", "auto")
