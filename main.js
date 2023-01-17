@@ -1,4 +1,7 @@
+
+
 //creating variables to target API and query select HTML elements
+
 const form = document.querySelector("#newsSearch");
 
 const base_URL = "https://newsapi.org/v2/everything?q=" 
@@ -11,7 +14,10 @@ const date = `&from= ${currentDate}` //change to current date
 
 const searchKey = "&sortBy=popularity" 
 
-const apiKey = "&apiKey=0d1cccf0a22042e6aeb60638a22b25b8"
+const apiKey1 = "&apiKey="
+
+const apiKey2 = "0d1cccf0a22042e6aeb60638a22b25b8"
+
 
 const mainSection = document.querySelector("#topStory");
 
@@ -33,7 +39,7 @@ window.addEventListener("load", getTopArticles);
 // Handles the on loading event
 function getTopArticles(event) {
     event.preventDefault();
-    let startAPI = "https://newsapi.org/v2/top-headlines?country=us&apiKey=0d1cccf0a22042e6aeb60638a22b25b8"
+    let startAPI = "https://newsapi.org/v2/top-headlines?country=us&apiKey=" + apiKey2
     getstartAPIdata(startAPI);
   }
 
@@ -134,7 +140,7 @@ newsSearch.addEventListener("submit", getNewStories);
 //Targets the API in accordance with the users search 
 function getNewStories(event) {
     event.preventDefault();
-    let searchAPI = base_URL + event.target.search.value + date + searchKey + apiKey;
+    let searchAPI = base_URL + event.target.search.value + date + searchKey + apiKey1 + apiKey2;
     getNewAPI(searchAPI);
 }
 //Parse the data to then use with a new function to populate data on webpage
